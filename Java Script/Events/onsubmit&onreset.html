@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnSubmitClick & OnResetClick</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script type="text/javascript">
+    "use strict";
+    function SubmitClick(){
+        alert('Form Submitted..');
+    }
+    function ResetClick(){
+        alert('Form Will Reset');
+    }
+    </script>
+</head>
+<body>
+    <form onsubmit="SubmitClick()" onreset="ResetClick()">
+        <div>
+            Name:
+            <input type="text" name="txtName">
+        </div>
+        <button type="button">Ordinary Button</button>
+        <button type="submit">Submit Button</button>
+        <button type="reset">Reset</button>
+    </form>
+</body>
+</html>

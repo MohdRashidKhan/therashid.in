@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer Events(Set setTimeout & clearTimeout)</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <Script type="text/javascript">
+    "use strict";
+    function msg1() {
+        document.getElementById("msg").innerHTML="Hello !";
+        }
+        function msg2() {
+            document.getElementById("msg").innerHTML = "How are You?";
+        }
+        function msg3(){
+            document.getElementById("msg").innerHTML= "Welcome to JavaScript";
+        }
+        function bodyload(){
+            window.m1 = setTimeout(msg1,1000);
+            window.m2 = setTimeout(msg2,3000);
+            window.m3 = setTimeout(msg3,5000);
+        }
+        function CancelMsg(){
+            clearTimeout(window.m2);
+        }
+    </script>
+    <style>
+        div {
+            text-align: center;
+            margin: auto;
+        }
+    </style>
+</head>
+<body onload="bodyload()">
+    <div id="msg" style="margin-top: 20px; text-align: center; width: 400px; border:3px solid green; font-size: 30px;">
+
+    </div>
+    <button id="btn" onclick="CancelMsg()" class="btn-primary" style="margin-top:10px">Cancel Message - 2</button>
+</body>
+
+</html>

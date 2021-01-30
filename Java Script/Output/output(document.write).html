@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document.Write</title>
+    <script "text/javaScript">
+function DeleteClick(){
+    var x = confirm("Are You Sure Want To Delete?");
+    if(x==true){
+        document.write("Record Deleted... <br><a href='output(document.write).html'> Back</a>");
+    }
+    else{
+        alert("Canceled..");
+    }
+}
+    </script>
+</head>
+<body>
+    <div>
+        <button type="button" onclick="DeleteClick()">
+Delete
+        </button>
+    </div>
+</body>
+</html>

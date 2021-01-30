@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>timer events setinterval & clearinterval</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script type="text/javascript">
+    "use strict";
+    function ShowTime(){
+        var time = new Date();
+        document.getElementById("msg").innerHTML = time.toLocaleTimeString();
+    }
+    function bodyload(){
+        window.time = setInterval(ShowTime,1000);
+    }
+    function StopClick(){
+        clearInterval(time);
+    }
+    function StartClick(){
+        bodyload();
+    }
+    </script>
+    <style>
+        div {
+            text-align: center;
+            margin: auto;
+        }
+    </style>
+</head>
+<body onload="bodyload()">
+    <div id="msg" style="margin-top: 20px; text-align: center; width: 400px; border: 3px solid darkblue; font-size: 40px;">
+    
+    </div>
+    <div>
+        <button onclick="StartClick()" class="btn-primary btn-outline-danger">Start</button>
+        <button onclick="StopClick()" class="btn-primary btn-outline-danger">Stop</button>
+    </div>
+</body>
+</html>

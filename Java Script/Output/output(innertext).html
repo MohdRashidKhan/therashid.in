@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InnerText</title>
+    <script "text/javascript">
+function DeleteClick(){
+var x = confirm("Are You Want To Sure Delete?");
+var msg= document.getElementById("msg");
+if(x==true){
+    msg.innerText="Record Deleted";
+}
+else{
+    msg.innerText="Cancel";
+}
+}
+    </script>
+</head>
+<body>
+    <div style="text-align: center;margin: 20px;">
+        <h2 id="msg"></h2>
+    </div>
+    <div>
+        <button type="button" onclick="DeleteClick()">Delete</button>
+    </div>
+</body>
+</html>

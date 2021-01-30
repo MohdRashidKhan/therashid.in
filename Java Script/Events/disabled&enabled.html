@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+        <style>
+            .box{
+                justify-content: center;
+                width:350px;
+                align-items: center;
+                margin:auto;
+                margin-top: 50px;
+                border:3px solid darkcyan;
+                padding:15px;
+            }
+            input, button:disabled {
+                cursor:not-allowed;
+            }
+            input, button:enabled {
+                cursor: pointer;
+            }
+            .card{
+                border: 2px dashed darkcyan;
+            }
+        </style>
+        <script>
+            var userDetails = {
+                CardNo:4444555566667777,
+                CVV:333,
+                Expiry:2021
+            }
+            function VerifyCard(){
+                var cardnumber = document.getElementById("txtCard").value;
+                if(cardnumber==userDetails.CardNo) {
+                    document.getElementById("txtCvv").disabled=false;
+                    document.getElementById("txtCvv").focus();
+                    document.getElementById("txtCard").disabled=true;
+                }
+            }
+            function VerifyCvv(){
+                var cvv = document.getElementById("txtCvv").value;
+                if(cvv==userDetails.CVV) {
+                    document.getElementById("lstYear").disabled=false;
+                    document.getElementById("lstYear").focus();
+                    document.getElementById("txtCvv").disabled=true;
+                }
+            }
+            function VerifyYear(){
+                var year = document.getElementById("lstYear").value;
+                if(year==userDetails.Expiry) {
+                    document.getElementById("btnOrder").disabled=false;
+                    document.getElementById("lstYear").disabled=true;
+                }
+            }
+        </script>
+    </head>
+    <body class="container-fluid">
+        
+        <div class="box">
+            <h2 id="card" class="text-primary text-center">Payment Details</h2>
+            <div class="form-group">
+                <label>Card Number</label>
+                <div>
+                    <input onkeyup="VerifyCard()" type="text" id="txtCard" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>CVV</label>
+                <div>
+                    <input onkeyup="VerifyCvv()" disabled type="text" id="txtCvv" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Expiry Year</label>
+                <div>
+                    <select onchange="VerifyYear()" disabled id="lstYear" class="form-control">
+                        <option>2020</option>
+                        <option>2021</option>
+                        <option>2022</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <button disabled id="btnOrder" class="btn btn-primary btn-block">Place Order</button>
+            </div>
+        </div>
+    </body>
+</html>

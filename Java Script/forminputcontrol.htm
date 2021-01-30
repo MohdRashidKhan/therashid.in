@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Input Control</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+.row{
+    height: 400px;
+}
+.col-4{
+     border-right: 3px dashed darkblue;
+}
+    </style>
+            <script>
+                function AddProduct(){
+                    var txtName = document.getElementById("txtName");
+                    var txtPrice = document.getElementById("txtPrice");
+                    var lsttype = document.getElementById("lsttype");
+                    var optStock = document.getElementById("optStock");
+                    var lstCities = document.getElementById("lstCities");
+    
+                    document.getElementById("lblName").innerHTML = txtName.value;
+                    document.getElementById("lblPrice").innerHTML = txtPrice.value;
+                    document.getElementById("lbltype").innerHTML = lsttype.value;
+                    document.getElementById("lblStock").innerHTML = (optStock.checked)?"Available":"Out of Stock";
+                    document.getElementById("lblShipped").innerHTML = (lstCities.value=="Select City"?"No-City-Selected":lstCities.value);
+                    
+                    txtName.value = "";
+                    txtPrice.value= "";
+                    lsttype.value= "";
+                    optStock.checked=false;
+                    lstCities.value = "Select City";
+                    
+    
+                    alert("Product Added Successfully");
+    
+                }
+            </script>
+        </head>
+        <body class="container-fluid">
+            <h1 class="text-primary text-center">Amazon Shopping</h1>
+            <div class="row">
+                <div class="col-4">
+                    <h2 class="text-primary text-center">Register Product</h2>
+                    <div class="form-group">
+                        <label>Name</label>
+                        <div>
+                            <input type="text" id="txtName" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Price</label>
+                        <div>
+                            <input type="text" id="txtPrice" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Select Item Type</label>
+                        <div>
+                            <select id="lsttype" class="form-control">
+                            <option>Electronic</option>
+                            <option>Cloth</option>
+                            <option>Fashion</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Is In Stock</label>
+                        <div>
+                            <input type="checkbox" id="optStock"> Yes
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Shipped To</label>
+                        <div>
+                            <select id="lstCities" class="form-control">
+                                <option>Select City</option>
+                                <option>Delhi</option>
+                                <option>Hyderabad</option>
+                                <option>Lucknow</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button onclick="AddProduct()" class="btn btn-primary btn-block">Add Product</button>
+                    </div>
+                </div>
+                <div class="col-8">
+                    <h2 class="text-primary text-center">Product Details</h2>
+                    <table class="table table-hover table-bordered">
+                        <colgroup span="1" style="background-color: lightcyan"></colgroup>
+                        <tr>
+                            <td>Name</td>
+                            <td id="lblName"></td>
+                            
+                        </tr>
+                        <tr>
+                            <td>Price</td>
+                            <td id="lblPrice"></td>
+                        </tr>
+                        <tr>
+                            <td>Item Type</td>
+                            <td id="lbltype"></td>
+                        </tr>
+                        <tr>
+                            <td>Stock</td>
+                            <td id="lblStock"></td>
+                        </tr>
+                        <tr>
+                            <td>Shipped To</td>
+                            <td id="lblShipped"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </body>
+    </html>

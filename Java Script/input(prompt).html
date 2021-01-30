@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="En-IN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Function</title>
+    <script type="text/javascript">
+    function Create(){
+           var folderName = prompt("New Folder","New_Folder");
+        if(folderName=="") {
+               document.write("Name Can't Be Empty");
+        } else if(folderName==null) {
+       document.write("You Canceled..");
+        } else{
+        document.getElementById("msg").innerHTML+= "Folder Created : " + folderName + "<br>";
+    }
+}
+    </script>
+</head>
+<body>
+    <button type="button" onclick="Create()">New Folder</button>
+<div id="msg">
+
+</div>
+</body>
+</html>

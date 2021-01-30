@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Of Operators</title>
+    <script type="text/javascript">
+    "use strict";
+    function f1() {
+      var product = {
+          Name: "TV",
+          Price: 45000.55,
+          IsStock:false
+      };
+      for(var property in product) {
+          document.write(`${property} : ${product[property]}<br>`);
+      }
+      document.write(`Stock ${(product.IsStock==true)?"Available":"Out of Stock"}`)
+    }
+    f1();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

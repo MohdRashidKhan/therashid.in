@@ -1,0 +1,53 @@
+<head>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../Fonts/css/all.css">
+    <script>
+        var products = [
+            {Name: "JBL Speaker", Photo: "../images/21.jpg"},
+            {Name: "T-Shirt", Photo: "../images/ras.jpg"},
+            {Name: "Shirt", Photo: "../images/holi.jpg"},
+            {Name: "Nike Casuals", Photo: "../images/clock.jpg"},
+            {Name: "Earpods", Photo: "../images/black.jpg"},
+        ];
+        var count=0;
+        function ShowImage(){
+            document.getElementById("lblName").innerHTML = products[count].Name;
+            document.getElementById("pic").src= products[count].Photo;
+            count++;
+        }
+       
+        function PlayClick(){
+            window.slideshow= setInterval(ShowImage,2000);
+            document.getElementById("status").innerHTML = "[Slide Show - Running]";
+        }
+        function PauseClick(){
+            clearInterval(slideshow);
+            document.getElementById("status").innerHTML="[Slide Show - Paused]";
+        }
+        function bodyload(){
+            ShowImage();
+        }
+    </script>
+</head>
+<body onload="bodyload()" class="container-fluid">
+    <h2 class="text-center text-primary">Products Slide Show</h2>
+  <div class="container">
+    <div class="card">
+        <div class="card-header text-center">
+            <h2 id="lblName" class="card-title"></h2>
+            <div id="status" class="card-subtitle"></div>
+        </div>
+        <div class="card-body text-center">
+            <img id="pic" width="350" height="250">
+        </div>
+        <div class="card-footer text-center">
+            <button onclick="PlayClick()" class="btn btn-outline-primary">
+                <span class="fa fa-play"></span>
+            </button>
+            <button onclick="PauseClick()" class="btn btn-outline-danger">
+                <span class="fa fa-pause"></span>
+            </button>
+        </div>
+    </div>
+  </div>
+</body>

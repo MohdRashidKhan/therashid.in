@@ -1,0 +1,47 @@
+<head>
+    <style>
+        dt{
+            background-color: lightgray;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function LoadDetails(){
+            document.getElementById("lblHost").innerHTML = location.host;
+            var msg;
+            if(location.protocol=="file:") {
+                msg = "You are using File System Server";
+            } else {
+                msg = "You are using Web Server";
+            }
+            document.getElementById("lblProtocol").innerHTML = location.protocol + "<br>" + msg;
+            document.getElementById("lblHref").innerHTML = location.href;
+        }
+        function GetQueryString(){
+            var str = location.search;
+            var username = str.substring(str.indexOf("=")+1)
+            document.getElementById("lblQuery").innerHTML = location.search + "<br>" + "Hello ! " + username;
+        }
+    </script>
+</head>
+<body>
+    <h2>Location Details</h2>
+    <div>
+        <form>
+            Name : <input type="text" name="txtName"> <button>Submit</button>
+        </form>
+    </div>
+    <button onclick="LoadDetails()">Load Details</button>
+    <button onclick="location.reload()">Refresh</button>
+    <button onclick="GetQueryString()">Get QueryString</button>
+    <dl>
+        <dt>Server / IP Address</dt>
+        <dd id="lblHost"></dd>
+        <dt>Protocol</dt>
+        <dd id="lblProtocol"></dd>
+        <dt>URL</dt>
+        <dd id="lblHref"></dd>
+        <dt>QueryString</dt>
+        <dd id="lblQuery"></dd>
+    </dl>
+</body>

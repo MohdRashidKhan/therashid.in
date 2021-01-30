@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date demo1</title>
+    <script type="text/javascript">
+    "use strict";
+    function f1() {
+        var product = {
+            Name: "Samsung TV",
+            Price: 45000.55,
+            Mfd: new Date()
+        };
+        var weekdays = ["Sunday","Monday","Tue","Wed","Thu","Friday","Sat"];
+        var months = ["Jan","Feb","Mar","Apr","May","June","July"];
+        document.write(`Manufactured Month=${months[product.Mfd.getMonth()]}<br>WeekDay=${weekdays[product.Mfd.getDay()]}<br>Date=${product.Mfd.getDate()}<br>Year=${product.Mfd.getFullYear()}`);
+    }
+    f1();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

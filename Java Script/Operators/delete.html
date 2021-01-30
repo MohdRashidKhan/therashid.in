@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Operators</title>
+    <script type="text/javascript">
+    "use strict";
+    function f1() {
+       var product = {
+           Name:"Samsung TV",
+           Price: 45000.55
+       };
+       delete product.Price;
+       if(product.Price==undefined) {
+           document.write(`Name=${product.Name}`);
+       } else {
+       document.write(`Name=${product.Name}<br>Price=${product.Price}`);
+       }
+    }
+    f1();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

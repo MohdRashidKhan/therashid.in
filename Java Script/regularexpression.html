@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regular Expression</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <Style>
+
+    </Style>
+    <script type="text/javascript">
+    "use strict";
+    function VerifyPassword(){
+                var password = document.getElementById("txtPwd").value;
+                var regExp=/(?=.*[A-Z])\w{4,15}/;
+                var msg = document.getElementById("msg");
+                if(password.match(regExp)) {
+                    msg.innerHTML = "Strong Password";
+                    msg.className = "text-success";
+                } else {
+                    if(password.length<4) {
+                        msg.innerHTML= "Poor Password";
+                        msg.className= "text-danger";
+                    } else {
+                        msg.innerHTML="Weak Password";
+                        msg.className="text-warning";
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body class="container-fluid">
+        <h2 class="text-primary text-center" >Verify Password</h2>
+        <input onkeyup="VerifyPassword()" type="password" id="txtPwd" class="form-control" placeholder="4 to 15 chars with 1 upppercase letter">
+        <span id="msg"></span>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOMReference</title>
+    <script type="text/javascript">
+function bodyload(){
+    window.document.images[0].src="../images/21.jpg";
+    window.document.forms[0].elements[1].value="Submit";
+}
+    </script>
+</head>
+<body onload="bodyload()">
+    <div>
+        <img width="100" height="100" border="5">
+    </div>
+    <div>
+        <form>
+            Name:
+            <input type="text">
+            <input type="button">
+        </form>
+    </div>
+    
+</body>
+</html>

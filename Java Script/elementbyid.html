@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Java Script Can Refer HTML By Using an ID</title>
+        <script type="text/javascript">
+         function bodyload(){
+            document.getElementById("pic").src="../Images/21.jpg";
+            document.getElementById("btnSubmit").value = "Register";
+         }
+        </script>
+    </head>
+    <body onload="bodyload()" >
+        <div>
+            <img id="pic"  width="100" height="100" border="10">
+        </div>
+        <div>
+            <form>
+                Name:
+                <input  id="txtName" type="text">
+                <input id="btnSubmit" type="button">
+            </form>
+        </div>
+    </body>
+</html>

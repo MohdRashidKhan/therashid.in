@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onkeyup onkeydown onkeypress events</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="fonts/css/all.css">
+    <script type="text/javascript">
+"use strict";
+var data =[
+{UserName: "john"},
+{UserName: "john123"},
+{UserName: "john_nit"},
+{UserName: "david"}
+];
+function VerifyUserName(){
+    var txtName = document.getElementById("txtName").value;
+    var userMsg = document.getElementById("userMsg");
+    for(var item of data){
+        if(txtName==item.UserName){
+            userMsg.className="text-danger";
+            userMsg.innerHTML="User Name Already Taken....Try Another";
+            break;
+        } else{
+            userMsg.className="text-success";
+            userMsg.innerHTML="User Name Available";
+        }
+    }
+}
+function CheckCaps(e){
+    var pwdMsg=document.getElementById("pwdMsg");
+    if(e.keyCode>=65 && e.keyCode<=90){
+        pwdMsg.style.display="block";
+
+    }else{
+        pwdMsg.style.display="none";
+    }
+}
+    </script>
+    <style>
+    
+    </style>
+</head>
+<body class="col-3">
+    <div class="container-fluid">
+        <h2 class="text-primary text-center">Register User</h2>
+        <div class="form-group">
+            <label>User Name</label>
+        <div>
+        <input onkeyup="VerifyUserName()" class="form-control" type="text" id="txtName">
+<span id="userMsg"></span>
+    </div>
+    </div>
+    <div class="form-group">
+<label>Password</label>
+<div>
+    <input onkeypress="CheckCaps(event)" type="password" id="txtPwd" class="form-control">
+    <span style="display: none;" id="pwdMsg">
+    <span class=" fa fa-exclamation-triangle text-warning"></span>
+Caps is ON   
+</span>
+</div>
+    </div>
+    <div class="btn">
+        <button class="btn-primary btn-outline-light text-center">Submit</button>
+    </div>
+</body>
+</html>

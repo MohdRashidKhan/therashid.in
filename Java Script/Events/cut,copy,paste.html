@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cut Copy & Paste Events</title>
+    <script type="text/javascript">
+"use strict";
+function ShowMessage(){
+    var msg = document.getElementById("msg");
+    msg.innerHTML = "Name In Block Letters";
+}
+    function HideMessage(){
+        document.getElementById("msg").innerHTML="";
+        var txtName =  document.getElementById("txtName");
+        txtName.value = txtName.value.toUppercase();
+    }
+    function Cut(){
+            document.getElementById("msg").innerHTML= "Removed & Copied To Clipboard";
+        }
+        function Copy(){
+            document.getElementById("msg").innerHTML= "Copied To Clipboard";
+        }
+        function Paste(){
+            document.getElementById("msg").innerHTML= "Inserted From Clipboard";
+        }
+    </script>
+</head>
+<body>
+    Name:
+    <input oncut="Cut()" oncopy="Copy()" onpaste="Paste()" onfocus="ShowMessage()" onblur="HideMessage()" type="text" id="txtName" placeholder="Name In Block Letters">
+<span id="msg"></span>
+</body>
+</html>

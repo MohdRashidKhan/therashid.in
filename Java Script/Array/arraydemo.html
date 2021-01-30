@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Demo</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../fonts/css/all.css">
+    <style>
+input[type="range"] {
+                height: 60px;
+                width: 300px;
+            }
+          
+    </style>
+    <script type="text/javascript">
+    "use strict";
+    
+    var products = [
+                {Name: "JBL Speaker", Price: 4000.55, Photo:"../images/21.jpg"}, //0
+                {Name: "Nike Casuals", Price: 2000.55, Photo:"../images/black.jpg"},      //1
+                {Name: "Shirt", Price: 5000.55, Photo:"../images/clock.jpg"},            //2
+                {Name: "Jeans", Price: 3000.55, Photo:"../images/holi.jpg"},            //3
+                {Name: "T-Shirt", Price: 1000.55, Photo:"../images/ras.jpg"},         //4
+            ]
+
+            function GetImage(index){
+                document.getElementById("pic").src= products[index].Photo;
+                document.getElementById("lblName").innerHTML = products[index].Name;
+                document.getElementById("lblPrice").innerHTML = "&#8377;" + products[index].Price;
+            }
+          
+            function bodyload(){
+               GetImage(0);
+            }
+            function SlideShow(){
+                var txtRange = document.getElementById("txtRange").value;
+                GetImage(txtRange);
+            }
+            var count=0;
+            function PreviousClick(){
+                count--;
+                GetImage(count);
+                document.getElementById("txtRange").value = count;
+            }
+            function NextClick(){
+                count++;
+                GetImage(count);
+                document.getElementById("txtRange").value=count;
+            }
+        </script>
+    </head>
+    <body onload="bodyload()" class="container-fluid">
+        <h2 class="text-primary text-center">Amazon Shopping</h2>
+        <div class="card text-center">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-2" style="line-height: 200px;">
+                        <button onclick="PreviousClick()" class="btn btn-outline-danger">
+                            <span class="fa fa-chevron-left"></span>
+                        </button>
+                    </div>
+                    <div class="col-8">
+                        <h3 id="lblName"></h3>
+                        <img id="pic" width="200" height="200">
+                        <h3 id="lblPrice"></h3>
+                    </div>
+                    <div class="col-2" style="line-height: 200px;">
+                        <button onclick="NextClick()" class="btn btn-outline-danger">
+                            <span class="fa fa-chevron-right"></span>
+                            </button>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <input onchange="SlideShow()" id="txtRange" type="range" min="0" max="4" value="0">
+            </div>
+        </div>
+    </body>
+</html>

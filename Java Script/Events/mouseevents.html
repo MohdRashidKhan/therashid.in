@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Events</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="fonts/css/all.css">
+    <script type="text/javascript">
+    "use strict";
+    function bodyload(){
+            var pics = ["images/21.jpg","images/ras.jpg","images/holi.jpg","images/black.jpg"];
+            var gallery = document.getElementById("gallery");
+            for(var item of pics){
+                var img = new Image();
+                img.height= 25;
+                img.width=25;
+                img.src= item;
+                gallery.appendChild(img);
+            }
+        }
+    
+    </script>
+    <style>
+        img {
+            width: 25%;
+            height: 25%;
+            transition: 2s;
+            opacity: 0.5;
+        }
+        img:hover {
+            transform: scale(2);
+            transition: 2s;
+            opacity: 1.0;
+            z-index: 10px;
+        }
+    </style>
+</head>
+<body onload="bodyload()" class="container-fluid">
+    <h4>Mouse Events</h4>
+    <marquee onmouseover="this.stop()" onmouseout="this.start()">
+    <div id="gallery">
+
+    </div>
+    </marquee>
+</body>
+</html>

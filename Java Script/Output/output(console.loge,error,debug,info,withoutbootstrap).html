@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #msg {
+                border:2px solid green;
+                border-radius: 10px;
+                padding: 10px;
+                height: 100px;
+                background-color: lightgreen;
+                box-shadow: 2px 2px 4px green;
+                color:green;
+                text-align: center;
+            }
+        </style>
+        <script>
+            function bodyload(){
+                document.getElementById("msg").style.display='none';
+            }
+            function DeleteClick(){
+                document.getElementById("msg").style.display='block';
+            }
+            function CloseClick(){
+                document.getElementById("msg").style.display='none';
+            }
+        </script>
+    </head>
+    <body onload="bodyload()">
+        <button onclick="DeleteClick()">Delete</button>
+        <div id="msg">
+            <h2>Record Deleted Successfully..</h2>
+            <button onclick="CloseClick()">Close</button>
+        </div>
+    </body>
+</html>

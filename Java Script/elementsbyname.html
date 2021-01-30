@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Script Can Refer HTML By Using Their Name</title>
+    <script type="text/javascript">
+    function bodyload(){
+        pic.src="../images/21.jpg";
+        frmRegister.btnSubmit.value ="Register";
+    }
+
+    </script>
+</head>
+<body onload="bodyload()">
+    <div>
+        <img name="pic" width="100" height="100" border="5">    
+    </div>
+    <div>
+        <form name="frmRegister">
+            Name:
+            <input name="txtName" type="text">
+            <input name="btnSubmit" type="button">
+        </form>
+    </div>
+</body>
+</html>

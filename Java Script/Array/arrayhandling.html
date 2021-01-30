@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Can Handle Any Number of Property</title>
+    <script type="text/javascript">
+    "use strict";
+function f1(){
+var sampleArray=[10,"john",true,[],function(){}];
+sampleArray[3]=["TV","Mobile","Shoes",222];
+sampleArray[4]=function(){
+    document.write("Function in Array");
+}
+for(var item of sampleArray[3]){
+    document.write(item+"<br>");
+}
+}
+f1();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

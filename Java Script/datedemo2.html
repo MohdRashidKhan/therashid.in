@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date demo2</title>
+    <script type="text/javascript">
+    "use strict";
+function f1(){
+var product ={
+    Name: "Samsung Tv",
+    Price: 300.89,
+    mfd: new Date()
+};
+product.mfd.setDate(20);
+product.mfd.setMonth(2);
+product.mfd.setFullYear(2019);
+document.write(`Manufactured Date=${product.mfd.toDateString()}`);
+}
+f1();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

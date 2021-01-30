@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miscelaneous Events</title>
+<script type="text/javascript">
+"use strict";
+function ShowMessage(){
+   var msg = document.getElementById("msg");
+   msg.innerHTML = "Name in Block Letters";
+}
+function HideMessage(){
+    document.getElementById("msg").innerHTML="";
+    var txtName = document.getElementById("txtName");
+    txtName.value = txtName.value.toUpperCase();
+}
+    </script>
+</head>
+<body>
+    Name:
+    <input onfocus="ShowMessage()" onblur="HideMessage()" type="text" id="txtName" placeholder="Name in Block Letters">
+    <span id="msg"></span>
+</body>
+</html>

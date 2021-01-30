@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript">
+         function bodyload(){
+           var x = document.getElementsByName("pay");
+           alert("Total No. of Payment Modes : " + x.length);
+         }
+        </script>
+    </head>
+    <body onload="bodyload()" >
+         <fieldset>
+             <legend>Payment Mode</legend>
+             <input type="radio" name="pay"> Cash
+             <input type="radio" name="pay"> UPI
+             <input type="radio" name="pay"> Credit Card
+         </fieldset>
+    </body>
+</html>

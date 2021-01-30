@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnChange</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script type="text/javascript">
+"use strict";
+function Zoom(){
+    var txtRange = document.getElementById("txtRange").value;
+    var pic = document.getElementById("pic");
+    switch(txtRange)
+{
+case "1":
+pic.width="100";
+pic.height="100";
+break;
+case "2":
+pic.width="200";
+pic.height="200";
+break;
+case "3":
+pic.width="300";
+pic.height="300";
+break;
+case "4":
+pic.width="400";
+pic.height="400";
+break;
+case "5":
+pic.width="500";
+pic.height="500";
+break;
+}
+}
+    </script>
+    <style>
+        #box {
+            justify-content: center;
+            margin: auto;
+            align-items: center;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="container-fluid">
+    <div id="box">
+        100%<input id="txtRange" onchange="Zoom()" type="range" value="1" min="1" max="5">500%
+    </div>
+    <div id="box">
+       <img id="pic" src="../images/21.jpg" width="100" height="100" alt="">
+    </div>
+</body>
+</html>
