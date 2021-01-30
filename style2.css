@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    --bg:#f5f6f7;
+    --color-text:#9c9c9c;
+    --color-orange:#ff6a00;
+    --color-shadow: -4px -2px 4px 0px #ffffff,
+                     4px 2px 6px 0px #DFE4EA;
+    --color-inset-shadow: inset -2px -2px 6px rgba(255,255,255,.8),
+                          inset 2px 2px 6px rgba(0,0,0,.1);
+    --color-equal-shadow: -2px -2px 6px rgba(3,169,244,.01),
+                          2px 2px 6px rgba(0,0,0,.3);
+    --color-equal-inset-shadow:inset -2px -2px 6px rgba(255,106,0,.5),
+                               inset 2px 2px 6px rgba(0,0,0,.3);
+}
+html[data-theme="dark"]{
+    --bg:#131419;
+    --color-text:#ffffff;
+    --color-orange:#ff6a00;
+    --color-shadow: -3px -3px 10px rgba(255,255,255,.05),
+                     3px 3px 15px rgba(0,0,0,.5);
+    --color-inset-shadow: inset -2px -2px 6px rgba(255,255,255,.01),
+                          inset 2px 2px 6px rgba(0,0,0,.8);
+    --color-equal-shadow: -2px -2px 6px rgba(3,169,244,.01),
+                          2px 2px 6px rgba(0,0,0,.8);
+    --color-equal-inset-shadow:inset -2px -2px 6px rgba(255,106,0,.2),
+                               inset 2px 2px 6px rgba(0,0,0,.5);
+}
+body{
+    background:var(--bg);
+    font-family: sans-serif;
+}
+.fas{
+    cursor: pointer;
+}
+label input[type="checkbox"]{
+    -webkit-appearance: none;
+}
+label input[type="checkbox"]:checked ~ .fas{
+    color: var(--color-orange);
+}

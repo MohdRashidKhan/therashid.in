@@ -1,0 +1,109 @@
+@media(max-width:767px){
+    .effect-4{
+            left: 9% !important;
+    top: 53% !important;
+    }
+    .effect-5{
+        right: 17% !important;
+    top: 50% !important;
+    }
+    .row{
+        margin:0 !important;
+    }
+    .about-section .skills .skill-item,
+    .about-section .about-info,
+    .about-section .about-img,
+    .home-section .home-text,
+    .home-section .home-img,
+    .service-section .service-item,
+    .contact-section .contact-item,
+    .about-section .skills ,
+    .about-section .timeline{
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+    .about-section .skills{
+        padding:0px 15px !important;
+    }
+    .about-section .timeline .timeline-item:nth-child(odd) {
+    padding: calc(15px + 15px) !important;
+    
+    
+    }
+     .about-section .timeline .timeline-item:nth-child(even) {
+    padding: calc(15px + 15px) !important;
+    
+    }
+    .about-section .timeline .timeline-item-inner {
+    padding: 30px 60px 33px 5px !important;
+    position:initial !important;
+    }
+   
+
+.about-section .timeline .timeline-item-inner .icon {
+       display:none !important;
+   }
+   .about-section .timeline:before{
+       content:'' !important;
+       height:0px !important;
+       width:0px !important;
+   }
+   .timeline-item-inner:before{
+       right:0;
+       left:0;
+       display:none;
+   }
+    .contact-section .w-50 {
+        padding: 0 10px !important;
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+    .about-section .about-info {
+        margin-top:15px !important;
+    }
+    .portfolio-section .portfolio-item {
+        flex: 0 0 100% !important;
+        max-width: 50% !important;
+    }
+    .home-section .home-text{
+        order: 2 !important;
+    }
+    .home-section .home-text{
+        text-align: center !important;
+    }
+    .home-section .full-scree{
+        padding:  100px 0 !important;
+    }
+    .home-section .home-img .img-box{
+        margin-bottom: 40px !important;
+        max-width: 350px !important;
+    }
+    .effect-3{
+        margin-left: -60px;
+    }
+    .effect-4{
+        left: 25%;
+    }
+    .effect-5{
+        right: 14%;
+    }
+    .about-section .about-img{
+        padding-bottom: 30px;
+    }
+    .about-section .timeline .timeline-item:nth-child(odd){
+        padding-right: 15px;
+        text-align: left;
+        padding-left: 0px;
+    }
+    .about-section .timeline .timeline-item:nth-child(even){
+        padding-left: 75px;
+    }
+}
+@media(max-width:574px){
+    .home-section .home-img .img-box{
+        max-width: 260px;
+    }
+    .home-section .home-text{
+        font-size: 40px;
+    }
+}
